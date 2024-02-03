@@ -1,5 +1,5 @@
 import './App.css'
-import { User, Users } from "./user.ts";
+import { User } from "./user.ts";
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -24,11 +24,7 @@ function App() {
   return (
     <>
     <div>
-      <ul>
-          {
-            users.map((user)=><li> {user.name} {user.email}</li>)
-          }
-      </ul>
+      
     </div>
     </>
   )
