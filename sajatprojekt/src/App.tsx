@@ -10,15 +10,16 @@ function App() {
     async function load() {
       try {
         const response=await fetch('http://localhost:3000/bejelentkezesadatok')
-        const users=await response.json() as Users;
-        setUser(users.users)
-        
+        const users=await response.json() as User[];
+        console.log(users)
+        setUser(users)
         
       } catch (error) {
         console.log(error)
       }
     }
-    load()
+    load()  
+    
   },[])
 
   return (
@@ -26,7 +27,7 @@ function App() {
     <div>
       <ul>
           {
-            users.map(user=><li>{user.name} {user.email}</li>)
+            users.map((user)=><li> {user.name} {user.email}</li>)
           }
       </ul>
     </div>
