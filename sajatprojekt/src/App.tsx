@@ -11,7 +11,6 @@ function App() {
       try {
         const response=await fetch('http://localhost:3000/bejelentkezesadatok')
         const users=await response.json() as User[];
-        console.log(users)
         setUser(users)
         
       } catch (error) {
