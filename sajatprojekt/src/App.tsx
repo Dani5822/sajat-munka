@@ -1,6 +1,8 @@
 import './App.css'
+import Loginpage from './login.tsx';
 import { User } from "./user.ts";
-import { useEffect, useState } from 'react';
+import { SetStateAction, useEffect, useState } from 'react';
+
 
 function App() {
 
@@ -9,7 +11,7 @@ function App() {
   useEffect(()=>{
     async function load() {
       try {
-        const response=await fetch('http://localhost:3000/bejelentkezesadatok')
+        const response=await fetch('http://localhost:3000/login')
         const users=await response.json() as User[];
         setUser(users)
         
@@ -18,13 +20,11 @@ function App() {
       }
     }
     load()  
-    
   },[])
-
   return (
     <>
     <div>
-      
+      <Loginpage></Loginpage>
     </div>
     </>
   )
